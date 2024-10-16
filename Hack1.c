@@ -1,23 +1,14 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#include<stdio.h>
 
 int main()
 {
-    char ch;
-    char s[50];
-    char sen[100];
+    char s[100];
+    scanf("%[^\n]",s);              // for full sentence sytax
 
-    scanf("%c", &ch);
-    scanf("%s", s);
-    getchar();
-    scanf("%[^\n]%*c", sen);
-    
-    printf("%c\n", ch);
-    printf("%s\n", s);
-    printf("%s\n", sen);
+    printf("Hello, World!\n");
+    printf("%s\n",s);
 
     return 0;
-
 }
+
+//learned String here;
