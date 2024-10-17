@@ -1,3 +1,14 @@
+/*
+
+Task
+
+This challenge requires you to print  on a single line,
+and then print the provided input string.
+
+*/
+
+
+
 #include<stdio.h>
 
 int main()

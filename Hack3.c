@@ -1,3 +1,13 @@
+/*
+
+Task
+
+Tack two int and two float
+print addition and difference of int and second line addition and difference of float rounded to one decimal point
+*/
+
+
+
 #include <stdio.h>
 
 int main()
