@@ -1,34 +1,30 @@
-//Q-1 Accept N numbers from user and display all such elements which are and divisible by 3 and 5.
-//Input   :     N : 6 
-//              Elements : 85  66  3   15  93  88
-//Output  :     15
-
+//return largest number of array
 
 #include<stdio.h>
 #include<stdlib.h>
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Function Name  : Display
-// Description    : Display elements which are and divisible by 3 and 5.
-// Input          : Pointer, Integer
-// Output         : -
-// Author         : Bhushan Ramdas Nagpure (090LI_Bhushan)
-// Date           : 11/11/2024
-// 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-void Display(int Arr[], int iLength)
+void Smallest(int Arr[], int iLength)
 {
-    int iSumEven = 0, iSumOdd = 0, iCnt = 0;
-
-    for(iCnt = 0; iCnt < iLength; iCnt++)
+    int iNo = 0, iCnt = 0, iDigits = 0;
+    for(iCnt= 0;iCnt<iLength; iCnt++)
     {
-        if(Arr[iCnt] % 5 == 0 && Arr[iCnt] % 3 == 0)             //or we can write Arr[iCnt % 15 == 0]
+        iNo = Arr[iCnt];
+        if(iNo < 0)
         {
-            printf("%d\t",Arr[iCnt]);
+            iNo = -iNo;
+        }
+        
+        iDigits = 0;
+
+        while(iNo > 0)
+        {
+            iNo = iNo / 10;
+            iDigits++;
+        }
+        if(iDigits == 3)
+        {
+            printf("%d\n",Arr[iCnt]);
         }
     }
 }
@@ -36,19 +32,19 @@ void Display(int Arr[], int iLength)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// This application which accept N numbers and display all such elements hich are multiple of 3 and 5.
+// This application which accept N numbers and return differnce between sum of even and sum of odd elements.
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 int main()
 {
-    int iSize = 0,iCnt = 0;
+    int iSize = 0, iCnt = 0, iValue = 0;
     int *ptr =NULL;
 
     printf("Enter the number of elements : \n");
     scanf("%d",&iSize);
-
+  
     ptr = (int *)malloc(iSize * sizeof(int));
 
     if(ptr == NULL)
@@ -65,7 +61,7 @@ int main()
         scanf("%d",&ptr[iCnt]);
     }
 
-    Display(ptr, iSize);
+    Smallest(ptr, iSize);
 
     free(ptr);
 
